@@ -1,0 +1,14 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head><title>Tienda Don Nicky Sham</title></head>
+    <body>
+        <header>
+            <img src="{% static 'shop/logo.png' %}" />
+        </header>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+    </body>
+</html>
