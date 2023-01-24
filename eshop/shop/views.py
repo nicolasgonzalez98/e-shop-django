@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
+
+from .models import Remera
 
 # Create your views here.
 
@@ -8,3 +9,10 @@ def index(request):
 
 def contacto(request):
     return render(request,'shop/contactos.html')
+
+
+
+def mis_remeras(request):
+    ctx = {'remeras': Remera.objects.all()}
+    
+    return render(request, 'shop/mis_remeras.html', ctx)

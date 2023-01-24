@@ -1,0 +1,34 @@
+{% extends "shop/base.html" %}
+{% block content %}
+
+<table>
+    <h1>Mis remeras</h1>
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Talle</th>
+                <th>Color</th>
+                <th>Lisa</th>
+                <th>Genero</th>
+            </tr>
+        </thead>
+
+        {% for i in remeras %}
+            <tr>
+                <td>{{ i.marca }}</td>
+                <td>{{ i.get_talle_display }}</td>
+                <td>{{ i.color }}</td>
+                <td>
+                    {% if i.lisa %}
+                    Si
+                    {% else %}
+                    No
+                    {% endif %}
+                </td>
+                <td>{{ i.get_genero_display }}</td>
+            </tr>
+        {% endfor %}
+
+</table>
+
+{% endblock %}
